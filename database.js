@@ -12,7 +12,7 @@ const db = mysql.createPool({
 
 export async function getCourses()
 {
-    const [result] = await db.query("Select * from Courses limit 2");
+    const [result] = await db.query("Select * from Courses  limit 5");
     return result
 }
 

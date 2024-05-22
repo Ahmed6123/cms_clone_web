@@ -1,10 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 
-import {getCourses} from './database.js'
+import {getCourses,createStudent,getStudentbyFname} from './database.js'
 
 
 const app = express()
-
+app.use(cors())
 
 app.get("/courses", async (req, res) => {
     const courses= await getCourses()
