@@ -21,8 +21,8 @@ export async function getTeachers() {
 }
 
 
-export async function getCourse(id) {
-  const [result] =await db.query("select * from courses where id = ?",[id])
+export async function getCourse(semester) {
+  const [result] =await db.query("select * from courses where semester = ?",[semester])
   return result[0]
 }
 
@@ -32,6 +32,13 @@ export async function registerCourse(student_id,course_id) {
   return getCourse(id)
 }
 
-
-
+// To fetch Current Teachers Courses' 
+export async function getTeacherCourses(teacher_id) {
+  const [result] =await db.query("select courses.title from teachers_courses inner join courses on teachers_courses.course_id=courses.id inner join teachers on teachers_courses.teacher_id = teachers.id where teacher_id=?",[teacher_id])
+  return result
+}
+export async function getCoursesStudents(course_id) {
+  const [result] =await db.query("select students.name from students_courses inner join courses on students_courses.id=courses.id inner join students on students_courses.student_id=students.id where course_id=?;",[course_id])
+  return result
+}
 
