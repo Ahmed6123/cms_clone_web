@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coordinator Page</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -11,31 +12,59 @@
             box-sizing: border-box;
         }
         
-        #wrapper {
+        .wrapper {
             display: flex;
             justify-content: space-between;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Coordinator Dashboard</h1>
-    <div id="wrapper">
-        <div id="teachers">
-        
-        </div>
-        <div id="courses">
+    <div class="wrapper">
+        <div>
+            <label for="course">Select Semester</label>
+            <select name="semester" id="semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>  
         </div>
         <div>
-            <button id="assig-btn">Assign Couurse</button>
+            <button id="semester-btn">Show Courses</button>
         </div>
+
     </div>
 
-    <script src="coor.js">
-        
-    </script>
-    
-   
+    <div>
+        <div class="wrapper" id="output">
+            
+        </div>
+    </div>
+    <div class="wrapper">
+        <dialog class="modal">
+            <button autofocus>Close</button>
+            <form method="dialog">
+            <input type="text">
+            <label for="teacher">Select Teacher</label>
+             <select name="teacher" id="teacherSel">
+            </select>
+            <button id="showID">show ID</button>
+            <button type="submit">Submit</button>
+            </form>
+        </dialog>
+      </div>
+
+
+
+    <script src="coor.js"></script>
+
 </body>
 </html>
