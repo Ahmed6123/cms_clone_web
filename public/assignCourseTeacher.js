@@ -118,6 +118,10 @@ async function showCoursesteachers(id) {
         item.addEventListener('click', () => {
           console.log(item.id);
           sessionStorage.setItem("coursedata", JSON.stringify({ id: item.id, course: item.dataset.course }));
+          const courseData = JSON.parse(sessionStorage.getItem("coursedata"));
+          if (courseData) {
+            course_current.value = `${courseData.course}`;
+           }
           dialog.showModal();
         });
       });
@@ -152,10 +156,6 @@ const course_current = document.getElementById("current-course");
     `
     });
     teachersel.innerHTML=HTML
-    const courseData = JSON.parse(sessionStorage.getItem("coursedata"));
-    if (courseData) {
-      course_current.value = `${courseData.course}`;
-    }
     } catch (error) {
       console.log('Error fetching terachers', error)
     }
@@ -165,13 +165,13 @@ showTeachers();
 //Modal Stuff
 const dialog = document.querySelector("dialog")
 const closeButton = document.querySelector("dialog button");
-const frm =document.querySelector("form")
+const frm =document.getElementById("assign-form")
 async function deletecourse(id) {
   const res = await fetch('http://localhost:5000/coordinator/delete/'+id, {
     method: "DELETE"
   })
   sem_btn.click()
-  }
+}
 
   async function AddTeacherCourse(teacherId,courseId) {
     console.log(teacherId,courseId)
@@ -191,9 +191,10 @@ frm.addEventListener('submit',(e) =>{
   e.preventDefault()
   const teacherId = teachersel.options[teachersel.selectedIndex].value
   const courseId= JSON.parse(sessionStorage.getItem('coursedata')).id
+  console.log(teacherId,courseId)
   const result = AddTeacherCourse(teacherId,courseId)
-  dialog.close();
   sem_btn.click()  
+  dialog.close()
   })
 
   closeButton.addEventListener("click", () => {
@@ -203,7 +204,7 @@ frm.addEventListener('submit',(e) =>{
 
 //Main Semester Selection Stuff
 const sem_dropdown = document.getElementById('semester-dropdown');
-const sem_btn = document.getElementById('semester-btn');
+const sem_btn = document.getElementById("semester-btn");
 sem_btn.addEventListener('click', () => {
     const semesterSelect = document.getElementById("semester-dropdown");
     const selectedSemester = semesterSelect.options[semesterSelect.selectedIndex].value;
