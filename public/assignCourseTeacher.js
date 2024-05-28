@@ -174,6 +174,7 @@ async function deletecourse(id) {
   }
 
   async function AddTeacherCourse(teacherId,courseId) {
+    console.log(teacherId,courseId)
     const res = await fetch('http://localhost:5000/coordinator/addteachercourse', {
       method: "POST",
       headers: {"Content-type": 'application/json'},
