@@ -2,7 +2,9 @@ import express from "express"
 import path from "path"
 import { fileURLToPath } from "url"
 
-import router from "./routes/coordinatorRoutes.js"
+import router2 from "./routes/coordinatorRoutes.js"
+import r_teacher from "./routes/teacherRoutes.js"
+import r_student from "./routes/studentRoutes.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -14,7 +16,10 @@ app.use(express.urlencoded({ extended: false}))
 app.use(express.static(path.join(__dirname,'public')))
 
 
-app.use("/coordinator",router)
+app.use("/coordinator",router2)
+app.use("/teacher",r_teacher)
+app.use("/student",r_student)
+
 
 
 

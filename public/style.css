@@ -1,4 +1,12 @@
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
 table {
   border: 1px solid #dededf;
   width: 100%;
@@ -34,12 +42,19 @@ td button {
 }
 
 .modal {
-padding: .5rem;
+ padding: .5rem;
 background: white;
 border-radius: .25rem;
 z-index: 10;
 align-items: center;
 position: fixed; 
 top:50%; 
+transform: translateY(-50%);
 left:50%;
+
+}
+
+table td input[type='checkbox']:disabled {
+  border:1px solid blue;
+  background-color: #ffffff;
 }

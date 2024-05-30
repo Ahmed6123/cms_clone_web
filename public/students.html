@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <div class="wrapper">
+        <div>
+            <label for="course">Select Semester</label>
+            <select name="semester" id="semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>  
+        </div>
+        <div>
+            <button id="semester-btn">Show Courses</button>
+        </div>
+
+    </div>
+
+    <div>
+        <div class="wrapper" id="output">
+            
+        </div>
+    </div>
+    <script src="students.js"></script>
+
+</body>
+</html>

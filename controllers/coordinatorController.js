@@ -6,7 +6,6 @@ const db = mysql.createPool({
   password: '1234',
   database: 'cms_clone'
 })
-
 const getCoursesAssigned = async (req,res) => {
   try {
     const id = parseInt(req.params.id)
@@ -55,7 +54,7 @@ const getAllTeachers = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in delete course assigned to teachers API",
+      message: "Error in getting teachers API",
       error
 
     })
@@ -121,8 +120,16 @@ const addTeacherCourse = async (req,res) => {
   try {
     const course_id = parseInt(req.body.course_id)
     const teacher_id = parseInt(req.body.teacher_id)
-    const [result] =await db.query("INSERT INTO teachers_courses (teacher_id,course_id) VALUES (?,?) ",[teacher_id,course_id])
-    const id= result.insertId
+    const result = await db.query("INSERT INTO teachers_courses (teacher_id,course_id) VALUES (?,?) ",[teacher_id,course_id])
+        
+    if(result[0].affectedRows>0){
+      res.status(200).send({
+        success:true,
+        message: "course Deleted"
+      })
+    }
+
+    // return result.insertId
   } catch (error) {
     console.log(error)
     res.status(500).send({

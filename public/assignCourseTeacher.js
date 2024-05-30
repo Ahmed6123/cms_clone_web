@@ -206,8 +206,7 @@ frm.addEventListener('submit',(e) =>{
 const sem_dropdown = document.getElementById('semester-dropdown');
 const sem_btn = document.getElementById("semester-btn");
 sem_btn.addEventListener('click', () => {
-    const semesterSelect = document.getElementById("semester-dropdown");
-    const selectedSemester = semesterSelect.options[semesterSelect.selectedIndex].value;
+    const selectedSemester = sem_dropdown.options[sem_dropdown.selectedIndex].value;
     showCoursesteachers(selectedSemester);
   });
 ;

@@ -17,7 +17,6 @@ router.get('/courses',getAllCoursess)
 // GET all teachers || DELETE
 router.delete('/delete/:id',deletCourse)
 
-// POST add teacher course || POST
 router.post('/addteachercourse', addTeacherCourse)
 
 export default router

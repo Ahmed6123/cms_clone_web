@@ -29,9 +29,10 @@ async function showTeachers() {
     if (!res.ok) {
       throw new Error('Failed to fetch teachers')
     }
+    
     const teachers = await res.json()
     teachers1=teachers
-    // console.log(teachers1)
+    
     let HTML = ``
   teachers1.forEach((teacher) => {
   HTML+=`
@@ -58,7 +59,10 @@ async function showCoursesteachers(id) {
     if (!res.ok) {
       throw new Error('Failed to fetch courses')
     }
+
     const courses = await res.json()
+    // console.log(res)
+    // console.log(courses)
     let HTML =
     `<table>
           <thead>
@@ -72,8 +76,7 @@ async function showCoursesteachers(id) {
     </thead>
     <tbody>
     `
-
-    courses.forEach((course) => {
+     courses.forEach((course) => {
       HTML+=`
       <tr>
       <td>${course.code}</td>
@@ -124,8 +127,7 @@ frm.addEventListener('submit',(e) =>{
   e.preventDefault()
   const teacherId = teachersel.options[teachersel.selectedIndex].value
   const courseId= JSON.parse(sessionStorage.getItem('coursedata')).id
-  console.log(teacherId,courseId)
-  const result = AddTeacherCourse(teacherId,courseId)
+  AddTeacherCourse(teacherId,courseId)
   dialog.close();
   btn2.click()
   
@@ -142,9 +144,8 @@ async function AddTeacherCourse(teacherId,courseId) {
     })
 
   })
-  return res
-
-}
+   
+ }
 
 
 btn2.addEventListener('click',()=>{
@@ -154,3 +155,9 @@ btn2.addEventListener('click',()=>{
 //  console.log('You selected: ', strUser);
 
 })
+
+
+
+
+
+
