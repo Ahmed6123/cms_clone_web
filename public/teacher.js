@@ -127,8 +127,7 @@ closeButton.addEventListener('click', ()=>{
   dialog.close()
 })
 
-async function Addmarks (course_id, student_id, marks) {
-  
+async function Addmarks (course_id, student_id, marks) { 
   const res = await fetch('http://localhost:5000/teacher/addmarks', {
     method: "POST",
     headers: {"Content-type": 'application/json'},

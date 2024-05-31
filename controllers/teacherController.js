@@ -7,6 +7,29 @@ const db = mysql.createPool({
   database: 'cms_clone'
 })
 
+const teacherLogin = async (req,res) => {
+  try {
+    const email = req.params.email
+    const result = await db.query("SELECT * FROM teachers WHERE email = ?",[email])
+    const id = result[0][0].id
+    if(result[0].length>0){
+      res.status(200).json(id)
+    }else{
+      res.status(404).send({
+        success:false,
+        message: "Teacher not found"
+      })
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({
+      success: false,
+      message: "Error",
+      error
+
+    })
+  }
+}
 const getmyCourses = async (req,res) => {
   try {
     const id = parseInt(req.params.id)
@@ -100,4 +123,4 @@ const addMarks = async (req,res) => {
   }
 }
 
-export {getmyCourses, getmyStudents,addMarks}
+export {getmyCourses, getmyStudents,addMarks,teacherLogin}
