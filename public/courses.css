@@ -379,6 +379,31 @@ body {
 	flex-grow: 1;
 	flex-basis: 500px;
 }
+
+#content main .course-table-data .course #btn-show-students {
+	padding: 6px 12px;
+	border-radius: 20px;
+	border: 1px solid var(--grey);
+	background: var(--blue);
+	font-size: 14px;
+	font: inherit;
+	color: var(--light);
+	cursor: pointer;
+	outline: none;
+}
+
+#content main .course-table-data .course #mycourse {
+	padding: 6px 12px;
+	border-radius: 20px;
+	border: 1px solid var(--grey);
+	background: var(--light);
+	color: var(--blue);
+	font: inherit;
+	cursor: pointer;
+	outline: none;
+	margin-right: 10px;
+}
+
 #content main .course-table-data .course table {
 	width: 100%;
 	border-collapse: collapse;
