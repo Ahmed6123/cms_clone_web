@@ -761,14 +761,14 @@ body {
 	cursor: pointer;
 }
 
-#content main .assign-course-teacher-table-data .assign-course-teacher select {
+#content main .assign-course-teacher-table-data .assign-course-teacher #semester-dropdown {
 	padding: 6px 12px;
 	border-radius: 20px;
 	border: 1px solid var(--grey);
 	background: var(--light);
 	font-size: 14px;
 	font: inherit;
-	color: var(--dark);
+	color: var(--blue);
 	cursor: pointer;
 	outline: none;
 	margin-right: 10px;
@@ -788,12 +788,12 @@ body {
 	margin-left: 94px;
 }
 
-#content main .assign-course-teacher-table-data .assign-course-teacher button {
+#content main .assign-course-teacher-table-data .assign-course-teacher #semester-btn {
 	padding: 6px 12px;
 	border-radius: 20px;
 	border: 1px solid var(--grey);
-	background: var(--light);
-	color: var(--blue);
+	background: var(--blue);
+	color: var(--light);
 	font: inherit;
 	cursor: pointer;
 	outline: none;
