@@ -29,7 +29,7 @@ const getCoursesAssigned = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting courses",
+      message: "Error: course not found",
       error
 
     })
@@ -54,7 +54,7 @@ const getAllTeachers = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting teachers API",
+      message: "Error: Teachers API not found",
       error
 
     })
@@ -68,15 +68,15 @@ const deletCourse = async (req,res) => {
     if(!id){
       return res.status(404).send({
         success: false,
-        message: "Invalid or provide id"
+        message: "Invalid or provide ID"
       })
     }
    
-    const result = await db.query("DELETE FROM teachers_courses where id = ? ",[id])
+    const result = await db.query("DELETE from teachers_courses where id = ? ",[id])
     if(result[0].affectedRows>0){
       res.status(200).send({
         success:true,
-        message: "course Deleted"
+        message: "Deleted Course"
       })
     }
 
@@ -85,7 +85,7 @@ const deletCourse = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting teachers API",
+      message: "Error: Teachers API not found",
       error
 
     })

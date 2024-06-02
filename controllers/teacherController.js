@@ -10,7 +10,7 @@ const db = mysql.createPool({
 const teacherLogin = async (req,res) => {
   try {
     const email = req.params.email
-    const result = await db.query("SELECT * FROM teachers WHERE email = ?",[email])
+    const result = await db.query("select * FROM teachers WHERE email = ?",[email])
     const id = result[0][0].id
     if(result[0].length>0){
       res.status(200).json(id)
@@ -36,7 +36,7 @@ const getmyCourses = async (req,res) => {
     if(!id){
       return res.status(404).send({
         success: false,
-        message: "Invalid or provide id"
+        message: "Invalid or provide ID"
       })
     }
     const [result] =await db.query("select courses.id, code,title,credits from courses inner join teachers_courses on courses.id=teachers_courses.course_id where teacher_id = ? order by title",[id])
@@ -53,7 +53,7 @@ const getmyCourses = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting courses",
+      message: "Error: Cannot fetch Course",
       error
 
     })
@@ -66,7 +66,7 @@ const getmyStudents = async (req,res) => {
     if(!id){
       return res.status(404).send({
         success: false,
-        message: "Invalid or provide id"
+        message: "Invalid or provide ID"
       })
     }
     const [result] =await db.query("select students.id,name,f_name,marks,completed from students inner join students_courses on students.id=students_courses.student_id where course_id = ? order by name",[id])
@@ -83,7 +83,7 @@ const getmyStudents = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting students",
+      message: "Error: Cannot fetch Students",
       error
 
     })
@@ -99,7 +99,7 @@ const addMarks = async (req,res) => {
     if(!course_id || !student_id ){
       return res.status(404).send({
         success: false,
-        message: "Invalid or provide id"
+        message: "Invalid or provide ID"
       })
     }
     const result = await db.query("update students_courses set marks= ?, completed =1 where course_id = ? and student_id = ?",[marks,course_id,student_id])
@@ -116,7 +116,7 @@ const addMarks = async (req,res) => {
     console.log(error)
     res.status(500).send({
       success: false,
-      message: "Error in getting students",
+      message: "Error: Cannot fetch Students",
       error
 
     })

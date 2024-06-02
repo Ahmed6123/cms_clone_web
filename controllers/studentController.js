@@ -37,7 +37,7 @@ const RegisterCourse = async (req,res) => {
       if(result[0].affectedRows>0){
         res.status(200).send({
           success:true,
-          message: "course registered successfully"
+          message: "Course Registered Successfully!"
         })
       }
   
@@ -46,7 +46,7 @@ const RegisterCourse = async (req,res) => {
       console.log(error)
       res.status(500).send({
         success: false,
-        message: "Error in Registering course",
+        message: "Error: Course has not been registered",
         error
   
       })
@@ -56,7 +56,7 @@ const RegisterCourse = async (req,res) => {
   const studentLogin = async (req,res) => {
     try {
       const email = req.params.email
-      const result = await db.query("SELECT * FROM students WHERE email = ?",[email])
+      const result = await db.query("select * FROM students WHERE email = ?",[email])
       const id = result[0][0].id
       if(result[0].length>0){
         res.status(200).json(id)
@@ -93,7 +93,7 @@ const RegisterCourse = async (req,res) => {
       console.log(error)
       res.status(500).send({
         success: false,
-        message: "Error in getting all courses API",
+        message: "Error: Courses API not found",
         error
   
       })
