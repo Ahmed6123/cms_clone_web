@@ -77,8 +77,8 @@ switchMode.addEventListener('change', function () {
 
 //Courses Dropdown
 const courses_sel = document.getElementById("mycourse")
-const btn_students = document.getElementById("btn-get-students")
-const frm = document.querySelector("form")
+const btn_students = document.getElementById("btn-show-students")
+const frm = document.getElementById("marks-form")
 const dialog = document.querySelector("dialog")
 const closeButton = document.querySelector("dialog button");
 const id = sessionStorage.getItem("teacher_id")
@@ -164,7 +164,7 @@ async function showCourses(id) {
 	 o.forEach((item) => {
 	  item.addEventListener('click',()=> {
 	  sessionStorage.setItem("student_id",item.id)
-	  // frm.marks.value=item.dataset.marks
+	  //frm.marks.value=item.dataset.marks
 	  dialog.showModal();
 		})
 
@@ -183,12 +183,26 @@ async function showCourses(id) {
 	sessionStorage.setItem("course_id",course_id)
    showstudents(course_id)})
 
+ //Send Marks
+ async function Addmarks (course_id, student_id, marks) { 
+	const res = await fetch('http://localhost:5000/teacher/addmarks', {
+	  method: "POST",
+	  headers: {"Content-type": 'application/json'},
+	  body: JSON.stringify ({
+		  course_id,
+		  student_id,
+		  marks
+	  })
+	})
+	return
+  }
 
   frm.addEventListener('submit',(e) =>{
 	e.preventDefault()
 	const course_id = sessionStorage.getItem("course_id")
 	const student_id = sessionStorage.getItem("student_id")
 	const marks = frm.marks.value
+	console.log(course_id,student_id,marks)
 	Addmarks(course_id,student_id,marks)
 	dialog.close()
 	btn_students.click()
@@ -199,16 +213,4 @@ async function showCourses(id) {
 	dialog.close()
   })
 
-  async function Addmarks (course_id, student_id, marks) { 
-	const res = await fetch('http://localhost:5000/teacher/addmarks', {
-	  method: "POST",
-	  headers: {"Content-type": 'application/json'},
-	  body: JSON.stringify ({
-		  course_id,
-		  student_id,
-		  marks
-	  })
-  
-	})
-	return
-  }
+ 

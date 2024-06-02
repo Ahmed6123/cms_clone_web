@@ -7,5 +7,5 @@ signinbtn.addEventListener("click", async (e) => {
     const res = await fetch(`http://localhost:5000/teacher/login/${email}`)
     const data = await res.json()
     sessionStorage.setItem('teacher_id' , data)
-    window.location.href = "http://localhost:5000/teachers.html"
+    window.location.href = "http://localhost:5000/courses.html"
 })

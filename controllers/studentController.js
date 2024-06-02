@@ -7,7 +7,27 @@ const db = mysql.createPool({
   database: 'cms_clone'
 })
 
+const ShowCurrentSemCourses = async (req,res) => {
+  try {
+    const semester = parseInt(req.params.semester)
+    const [result] = await db.query("select code,title,cerdits,teachers.name from courses left join students_courses on courses.id=students_courses.course_id LEFT join teachers_courses on courses.id=teachers_courses.course_id left join teachers on teachers_courses.teacher_id=teachers.id;",[semester])
+    if(!result){
+      return res.status(404).send({
+        success: false,
+        message: "No records found"
+      })
+    }
+    res.status(200).json(result)
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({
+      success: false,
+      message: "Error in getting all courses API",
+      error
 
+    })
+  }
+}
 const RegisterCourse = async (req,res) => {
     try {
       const course_id = parseInt(req.body.course_id)
