@@ -1,5 +1,5 @@
 import express from "express"
-import {addTeacherCourse, deletCourse, getAllCoursess, getAllTeachers, getCoursesAssigned} from "../controllers/coordinatorController.js"
+import {addWarning,Login,getUnregStudents,getAllResults,addTeacherCourse, closeSemester, deletCourse, getAllCoursess, getAllTeachers, getBatches, getCoursesAssigned, getOpenSemesters, getNextSemester, opneNewSemester, getStudents, getLowResults} from "../controllers/coordinatorController.js"
 
 const router = express.Router()
 
@@ -19,4 +19,19 @@ router.delete('/delete/:id',deletCourse)
 
 router.post('/addteachercourse', addTeacherCourse)
 
+router.get('/batches',getBatches)
+
+router.get('/getopensemesters/:batch',getOpenSemesters)
+
+router.get('/closesemester/:id',closeSemester)
+
+router.get('/getnextsemester/:batch',getNextSemester)
+router.post('/opensemester',opneNewSemester)
+
+router.get('/getstudents/:batch',getStudents)
+router.post('/getresults',getAllResults)
+router.get('/getunregstudents/:batch',getUnregStudents)
+router.post('/addwarning',addWarning)
+router.post('/login', Login)
+router.post('/getlowresults',getLowResults)
 export default router
