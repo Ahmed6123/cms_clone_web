@@ -155,7 +155,7 @@ async function ShowResults(batch,semester){
 	<td>${semester.name}</td>
 	<td>${semester.credits}</td>
 	<td>${semester.product}</td>
-	<td>${semester.gpa}</td>
+	<td>${parseFloat(semester.gpa).toFixed(2)}</td>
 	</tr>
 	`
 	});
@@ -197,7 +197,7 @@ async function ShowLowResults(batch,semester){
 	  <td>${semester.name}</td>
 	  <td>${semester.credits}</td>
 	  <td>${semester.product}</td>
-	  <td>${semester.gpa}</td>
+	  <td>${parseFloat(semester.gpa).toFixed(2)}</td>
 	  </tr>
 	  `
 	  });
