@@ -58,29 +58,15 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.remove('dark');
         }
     });
+});
 
-    // Course filtering
-    const courseChoice = document.getElementById('course-choice');
-    const tableRows = document.querySelectorAll('.course-table-data tbody tr');
-    courseChoice.addEventListener('change', function () {
-        const selectedValue = this.value;
-        tableRows.forEach(row => {
-            const status = row.querySelector('.status').textContent.toLowerCase();
-            if (selectedValue === 'Ongoing') 
-			{
-                if (status === 'pending' || status === 'process') 
-				{
-                    row.style.display = '';
-                } 
-				else 
-				{
-                    row.style.display = 'none';
-                }
-            } 
-			else 
-			{
-                row.style.display = '';
-            }
-        });
-    });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+const output = document.getElementById('output');
+const notifier = new WarningNotifier();
+const observer = new WarningObserver(output);
+
+notifier.addObserver(observer);
+    notifier.checkWarnings(student_id);
 });
