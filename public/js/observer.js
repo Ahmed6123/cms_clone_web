@@ -33,15 +33,20 @@ class WarningNotifier {
 }
 
 
-class WarningObserver {
+class ObserverInterface {
     constructor(outputElement) {
         this.outputElement = outputElement;
     }
 
     update(studentId, warnings) {
-        if (warnings.length === 0) {
+        if (warnings.length !== 0) {
+            let HTML = `<a href="StudentWarning.html" id="warning-item">
+            <i class='bx bx-error' ></i>
+            <span class="text">Warnings</span>
+        </a>`;
+        this.outputElement.innerHTML = HTML;
         } else {
-            alert("You have warnings")
+            
             // let HTML = ``;
             // warnings.forEach((warning) => {
             //     HTML += 

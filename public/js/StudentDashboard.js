@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-const output = document.getElementById('output');
-const notifier = new WarningNotifier();
-const observer = new WarningObserver(output);
+const output = document.getElementById('warning-select');
+const interface = new WarningNotifier();
+const observer = new ObserverInterface(output);
 
-notifier.addObserver(observer);
-    notifier.checkWarnings(student_id);
+interface.addObserver(observer);
+    interface.checkWarnings(student_id);
 });
