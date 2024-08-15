@@ -1,10 +1,10 @@
 import mysql from "mysql2/promise"
 
 const db = mysql.createPool({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '1234',
-  database: 'cms_clone'
+  host: env.MYSQL_HOST,
+  user: env.MYSQL_USER,
+  password: env.MYSQL_PASSWORD,
+  database: env.MYSQL_DB
 })
 
 const getmyCourses = async (req,res) => {

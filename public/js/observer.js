@@ -45,15 +45,5 @@ class ObserverInterface {
             <span class="text">Warnings</span>
         </a>`;
         this.outputElement.innerHTML = HTML;
-        } else {
-            
-            // let HTML = ``;
-            // warnings.forEach((warning) => {
-            //     HTML += 
-            //     `<p>${warning.warning}</p><br>`;
-            // });;
-            // console.log(HTML);
-            // this.outputElement.innerHTML = HTML;
-        }
     }
-}
+}}
