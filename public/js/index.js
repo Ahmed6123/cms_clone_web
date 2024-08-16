@@ -5,16 +5,16 @@ const adminbtn = document.getElementById("adminSignin")
 
 stdbtn.addEventListener('click', () =>{
     sessionStorage.setItem("sign","student")
-    window.location.href="http://localhost:5000/StudentLogin.html"
+    window.location.href="/StudentLogin.html"
 })
 
 fabtn.addEventListener('click', () =>{
     sessionStorage.setItem("sign","faculty")
-    window.location.href="http://localhost:5000/TeacherLogin.html"
+    window.location.href="/TeacherLogin.html"
 })
 
 adminbtn.addEventListener('click', () =>{
     sessionStorage.setItem("sign","admin")
-    window.location.href="http://localhost:5000/CoordinatorLogin.html"
+    window.location.href="/CoordinatorLogin.html"
     
 })
