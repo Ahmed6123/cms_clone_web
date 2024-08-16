@@ -4,5 +4,5 @@ const batch = JSON.parse(sessionStorage.student).batch
 const logout= document.getElementById("logout-btn")
 logout.addEventListener('click',()=>{
     sessionStorage.clear()
-    window.location.href="http://localhost:5000"
+    window.location.href="https://cms-clone.vercel.app/"
   })

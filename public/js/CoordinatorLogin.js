@@ -11,7 +11,7 @@ loginBtn.addEventListener('click', (e)=>{
 
 async function Login(email,password){
     try {
-        const url = "http://localhost:5000/coordinator/login"
+        const url = "/coordinator/login"
         const res = await fetch(url, {
             method: "POST",
             headers: {"Content-type": 'application/json'},
