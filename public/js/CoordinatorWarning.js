@@ -115,7 +115,7 @@ async function showstudents(batch) {
   
   try {
 
-    const res = await fetch('http://localhost:5000/coordinator/getstudents/'+batch)
+    const res = await fetch('/coordinator/getstudents/'+batch)
   
     if (!res.ok) {
       throw new Error('Failed to fetch students')
