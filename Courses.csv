@@ -1,0 +1,70 @@
+ID,Course Code,Course Title,Credit Hours,Semester
+1,CSC 110,Computing Fundamentals,2,1
+2,CSC 110,Computing Fundamentals Lab,1,1
+3,CSC 113,Computer Programming,3,1
+4,CSC 113,Computer Programming Lab,1,1
+5,ENG 101,Functional English,3,1
+6,GSC 110,Applied Calculus & Analytical Geometry,3,1
+7,GSC 114,Applied Physics,2,1
+8,GSC 114,Applied Physics Lab,1,1
+9,ENV 101,Occupational Health and Safety,1,1
+10,ISL 107,Tajweed,0,1
+11,CSC 115,Discrete Structures,3,2
+12,CSC 210,Object-Oriented Programming,3,2
+13,CSC 210,Object-Oriented Programming Lab,1,2
+14,SEN 120,Introduction to Software Engineering,3,2
+15,ENG 134,Effective Communication Skills,2,2
+16,ISL 101,Islamic Studies/Ethics,2,2
+17,GSC 121,Linear Algebra,3,2
+18,ISL 108,Understanding Quran- I,0,2
+19,CSC 221,Data Structures & Algorithms,3,3
+20,CSC 221,Data Structures & Algorithms Lab,1,3
+21,SEN 211,Software Requirement Engineering,3,3
+22,GSC 122,Probability & Statistics,3,3
+23,HSS 541,Organizational Behavior,2,3
+24,CEN 220,Computer Architecture and Logic Design,3,3
+25,CEN 220,Computer Architecture and Logic Design Lab,1,3
+26,PAK 103,Pakistan Studies and Global Perspective,2,3
+27,ISL 109,Understanding Quran-II,0,3
+28,CSC 320,Operating Systems,3,4
+29,CSC 320,Operating Systems Lab,1,4
+30,CSC 220,Database Management System,3,4
+31,CSC 220,Database Management System Lab,1,4
+32,CSC 321,Design and Analysis of Algorithms,3,4
+33,SEN 221,Software Design & Architecture,2,4
+34,SEN 221,Software Design & Architecture Lab,1,4
+35,MGT 423,Engineering Management,3,4
+36,ISL 110,Understanding Quran-III,0,4
+37,CEN 223,Computer Communication & Networks,3,5
+38,CEN 223,Computer Communication & Networks Lab,1,5
+39,SEN 323,Formal Methods in Software Engineering,3,5
+40,SEN 311,Software Construction,2,5
+41,SEN 311,Software Construction Lab,1,5
+42,"SEN 411	",Software Re-Engineering,3,5
+43,"CSC 315	",Theory of Automata,3,5
+44,"PSY 102	","Introduction to Psychology	",2,5
+45,ISL 111,Understanding Quran-IV,0,5
+46,SEN 321,Software Quality Engineering,3,6
+47,SEN 320,Human Computer Interaction,3,6
+48,ENG 320,Technical Writing & Presentation Skills,3,6
+49,"SEN 310	",Web Engineering,3,6
+50,"SEN 452	",Agile Development,3,6
+51,SEN 401,Cloud Computing,2,6
+52,SEN 401,Cloud Computing Lab,1,6
+53,ISL 112,Understanding Quran-III,0,6
+54,FTP 400,Final Year Project I,0,7
+55,FTP 400,Final Year Project I Lab,3,7
+56,SEN 410,Software Project Management,3,7
+57,CSC 407,Information Security,3,7
+58,GSC 321,Numerical Analysis,2,7
+59,GSC 321,Numerical Analysis Lab,1,7
+60,SEN 332,Big Data Analytics,3,7
+61,HSS 423,Entrepreneurship,2,7
+62,ISL 113,Seerah-I,0,7
+63,FYP 400,Final Year Project II,0,8
+64,FYP 400,Final Year Project II Lab,3,8
+65,CSC 313,Visual Programming,3,8
+66,CSC 313,Visual Programming Lab,1,8
+67,"	SEN 331",Scientific Computing,3,8
+68,"GSC 210	",Differential Equations,3,8
+69,ISL 114,Seerah-II,0,8

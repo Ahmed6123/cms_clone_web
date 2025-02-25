@@ -1,10 +1,13 @@
 import mysql from "mysql2/promise"
+import dotenv from "dotenv"
+dotenv.config()
 
 const db = mysql.createPool({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '1234',
-  database: 'cms_clone'
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DB,
+  port: process.env.MYSQL_PORT,
 })
 const getCoursesAssigned = async (req,res) => {
   try {
